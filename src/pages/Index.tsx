@@ -21,12 +21,12 @@ const Index = () => {
     setResult(null);
 
     try {
-      const { data, error } = await supabase.functions.invoke('check-symptoms', {
-        body: { symptoms }
+      const { data, error } = await supabase.functions.invoke("check-symptoms", {
+        body: { symptoms },
       });
 
       if (error) {
-        console.error('Function invocation error:', error);
+        console.error("Function invocation error:", error);
         toast({
           title: "Error",
           description: error.message || "Failed to analyze symptoms. Please try again.",
@@ -50,7 +50,7 @@ const Index = () => {
         description: "Your symptoms have been analyzed successfully.",
       });
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       toast({
         title: "Error",
         description: "An unexpected error occurred. Please try again.",
@@ -117,7 +117,7 @@ const Index = () => {
       <footer className="border-t bg-card/50 backdrop-blur-sm mt-20">
         <div className="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
           <p>
-            Built with Lovable Cloud & AI • For Educational Purposes Only • Not Medical Advice
+            For Educational Purposes Only • Not Medical Advice
           </p>
         </div>
       </footer>
